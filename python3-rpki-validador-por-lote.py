@@ -28,10 +28,10 @@ def descargar_base_roas() -> list:
         print("📥 Descargando base de datos global de Cloudflare (esto puede tardar unos segundos)...")
         response = requests.get(url_cloudflare, headers=cabeceras, timeout=30)
         if response.status_code == 200:
-            print("✅ Base de datos descargada con éxito.")
+            print(" Base de datos descargada con éxito.")
             return response.json().get('roas', [])
     except Exception as e:
-        print(f"❌ Error crítico al descargar la base de datos: {e}")
+        print(f" Error crítico al descargar la base de datos: {e}")
     return []
 
 def optimizar_roas_con_rangos(roas: list) -> list:
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     lista_roas_global = descargar_base_roas()
     
     if not lista_roas_global:
-        print("❌ No se puede continuar sin la base de datos de origen.")
+        print(" No se puede continuar sin la base de datos de origen.")
         exit()
         
     # 2. Convertir los datos a objetos de red indexables
